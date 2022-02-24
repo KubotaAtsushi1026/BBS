@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>JavaScriptの練習</title>
+    </head>
+    <body>
+        <h1>JavaScriptの練習</h1>
+        <script>
+            console.log('こんにちは');
+            // 変数
+            let name = '久保田';
+            console.log(name + 'さん、こんにちは');
+            name = '島';
+            console.log(name + 'さん、こんにちは');
+            // 定数
+            const PI = 3.14;
+            // 半径
+            // let r = 5;
+            // 面積
+            // let s = r * r * PI;
+            // console.log('半径' + r + 'の円の面積は' + s + 'です');
+            // PI = 5;
+            // var name = '島';
+            // r = 10;
+            // s = r * r * PI;
+            // console.log('半径' + r + 'の円の面積は' + s + 'です');
+            // r = 15;
+            // s = r * r * PI;
+            // console.log('半径' + r + 'の円の面積は' + s + 'です');
+            
+            // 円の半径を与えられたとして円の面積を計算する関数
+            // function calc(r){ // 引数
+            //    let s = r * r * PI;
+            //    console.log('半径' + r + 'の円の面積は' + s + 'です');
+            // }
+            // 関数式
+            // const calc = function(r){
+            //    let s = r * r * PI;
+            //    console.log('半径' + r + 'の円の面積は' + s + 'です');
+                
+            // }
+            // アロー式
+            const calc = (r) => {
+                let s = r * r * PI;
+                console.log('半径' + r + 'の円の面積は' + s + 'です');
+            }
+            // calc関数の実行
+            calc(1);
+            calc(2);
+            // 繰り返し構文
+            // for(let i = 1; i < 1001; i++){
+                // console.log(i);
+               // calc(i);
+            // }
+            // while
+            let j = 10;
+            while(j < 10){
+                calc(j);
+                j++;
+            }
+            // do while
+            let k = 10;
+            do{
+                calc(k);
+                k++;
+            }while(k < 10);
+            
+            // 条件分岐（場合分け）
+            // Math.random() <--- 0.0以上1.0未満の乱数を生成
+            // Math.random() * 5 <--- (0.0以上5.0未満)
+            // Math.floor(a) <--- aの小数点以下を切り捨てて整数にする
+            // 1,2,3,4,5,6 のいずれかのサイコロ
+            
+            // ヒストグラム配列
+            const hist = [0, 0, 0, 0, 0, 0];
+            
+            
+            // サイコロを振って判定する関数
+            const rand = () => {
+                let num = Math.floor(Math.random() * 6) + 1;
+                hist[num - 1]++;
+                // numが3以上ならば
+                if(num >= 3){
+                    console.log(num + 'は3以上です');
+                }else{ // それ以外ならば
+                    console.log(num + 'は3未満です');
+            }
+            }
+            for(let z = 1; z <= 100; z++){
+                console.log(z + '回目のサイコロを振ります');
+                rand();
+            }
+            
+            // ヒストグラム結果表示
+            for(let l = 0; l < 6; l++){
+                console.log((l + 1) + 'のサイコロは' + hist[l] + '回出た');
+            }
+            
+        </script>
+    </body>
+</html>
